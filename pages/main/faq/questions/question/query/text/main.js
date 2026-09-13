@@ -1,9 +1,9 @@
 export default function text(t){
     let style = `
         {
-            font-size:18px;
+            font-size:16px;
             color:var(--colorWhite);
-            font-weight:900;
+            font-weight:500;
             width:80%;
         }`
 

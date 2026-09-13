@@ -1,10 +1,9 @@
 export default function logo(){
     let style = `
         {
-            height:100px;
+            height:40px;
         }
         :responsive{
-            height:75px;
             margin:2.5% 0px;
         }`
 

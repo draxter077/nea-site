@@ -10,7 +10,7 @@ export default function foot(){
             align-items:center;
             width:100%;
             height:fit-content;
-            background:green;
+            border-top:1px solid var(--colorWhite);
             margin:5% 0px 0px 0px;
             padding:2% 5% 1%;
         }

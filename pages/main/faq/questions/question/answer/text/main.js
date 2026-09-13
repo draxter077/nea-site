@@ -1,7 +1,7 @@
 export default function text(t){
     let style = `
         {
-            font-size:16px;
+            font-size:14px;
             text-align:justify;
             color:var(--colorWhite);
             width:100%;

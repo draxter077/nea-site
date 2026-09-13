@@ -1,3 +1,7 @@
+import slogan from "./slogan/main.js"
+import text from "./text/main.js"
+import links from "./links/main.js"
+
 export default function outdoor(){
     let style = `
         {
@@ -6,10 +10,8 @@ export default function outdoor(){
             flex-direction:column;
             align-items:center;
             width:90%;
-            height:100svh;
             text-align:center;
-            padding:7.5% 0px;
-            background:var(--colorWhite);
+            margin:7.5% 0px 0px;
         }
         :responsive{
             width:95%;
@@ -17,6 +19,8 @@ export default function outdoor(){
         }`
 
     const outdoor = cE("div",style)
-    outdoor.innerHTML = "NEA"
+    outdoor.appendChild(slogan())
+    outdoor.appendChild(text())
+    outdoor.appendChild(links())
     return(outdoor)
 }

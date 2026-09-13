@@ -1,12 +1,11 @@
 export default function logo(){
     let style = `
         {
-            height:52px;
-            border:2px solid var(--colorWhite);
+            height:35px;
         }`
 
     const logo = cE("img",style)
-    logo.src = "/assets/"
-    logo.alt = "Logotipo da NomeEmpresa"
+    logo.src = "/assets/logo.png"
+    logo.alt = "Logotipo do NEA UFPR"
     return(logo)
 }

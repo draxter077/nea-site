@@ -34,7 +34,7 @@ export default function questions(){
     document.head.appendChild(script)
 
     let qs = [
-        {question:"Questão teste",answer:"Resposta teste"},
+        {question:"Sou aluno da UFPR. Como posso participar?",answer:"Tem que rebolar gostoso"},
     ]
 
     for(let i = 0; i < qs.length; i++){

@@ -80,9 +80,14 @@ const resetCss = `
         font-display:swap;
         src:url("https://www.ph.net.br/assets/font/Garet-Book.otf");
     }
+    @font-face{
+        font-family:"Montserrat";
+        font-display:swap;
+        src:url("/assets/font/Montserrat.ttf");
+    }
     body{
     	box-sizing:border-box;
-    	font-family:system-ui;
+    	font-family:"Montserrat";
     	background:var(--colorBlack);
     	cursor:default;
 	    user-select:none;
@@ -204,8 +209,9 @@ window.construct = async function construct(d){
 }
 
 window.api_url = "https://ace-chimp-merry.ngrok-free.app/"
-window.whatsapp_url = "https://wa.me/"
 window.instagram_url = "https://www.instagram.com/"
+window.youtube_url = "https://www.youtube.com/"
+window.tiktok_url = "https://www.tiktok.com/"
 axios.defaults.headers.common["ngrok-skip-browser-warning"] = "69420"
 
 construct()

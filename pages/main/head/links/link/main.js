@@ -2,16 +2,16 @@ export default function link(n,id){
     let style = `
         {
             position:relative;
-            font-size:18px;
-            font-weight:900;
-            padding:2px 7px 2px;
-            margin:0px 0px 0px 10px;
+            font-size:16px;
+            font-weight:500;
+            padding:2px 5px 2px;
+            margin:0px 0px 0px 20px;
             color:var(--colorWhite);
             cursor:pointer;
         }
         :responsive{
             margin:0px 5px;
-            padding:1px 7px 1px;
+            padding:1px 5px 1px;
         }
         ::after{
             position:absolute;
@@ -19,8 +19,8 @@ export default function link(n,id){
             left:0%;
             z-index:-1;
             content:"";
-            width:2px;
-            height:2px;
+            width:0px;
+            height:1px;
             background:var(--colorWhite);
             transition:width 0.25s;
         }

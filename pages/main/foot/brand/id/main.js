@@ -7,6 +7,9 @@ export default function id(){
             display:flex;
             flex-direction:row;
             align-items:center;
+        }
+        :responsive{
+            margin:0px 0px 20px 0px;
         }`
 
     const id = cE("div",style)
