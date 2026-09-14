@@ -2,7 +2,7 @@ export default function newsletter(){
     return(
         {
             id:"newsletter",
-            type:"div",
+            element:"div",
             style:`
                 {
                     width:100%;

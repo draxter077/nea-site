@@ -1,7 +1,7 @@
 export default function foot(){
     return(
         {
-            type:"div",
+            element:"div",
             style:`
                 {
                     display:flex;
@@ -18,7 +18,7 @@ export default function foot(){
                 }`,
             children:[
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             display:flex;
@@ -29,7 +29,7 @@ export default function foot(){
                         }`,
                     children:[
                         {
-                            type:"div",
+                            element:"div",
                             style:`
                                 {
                                     display:flex;
@@ -38,7 +38,7 @@ export default function foot(){
                                 }`,
                             children:[
                                 {
-                                    type:"img",
+                                    element:"img",
                                     style:`
                                         {
                                             height:42px;
@@ -47,7 +47,7 @@ export default function foot(){
                                     alt:"Logotipo do NEA"
                                 },
                                 {
-                                    type:"div",
+                                    element:"div",
                                     style:`
                                         {
                                             font-size:14px;
@@ -60,7 +60,7 @@ export default function foot(){
                             ]
                         },
                         {
-                            type:"div",
+                            element:"div",
                             style:`
                                 {
                                     display:flex;
@@ -74,7 +74,7 @@ export default function foot(){
                                     {src:"/assets/icons/tiktok.png",url:tiktok_url}
                                 ].map((l) => (
                                     {
-                                        type:"a",
+                                        element:"a",
                                         style:`
                                             {
                                                 height:32px;
@@ -98,7 +98,7 @@ export default function foot(){
                     ]
                 },
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             display:flex;
@@ -118,7 +118,7 @@ export default function foot(){
                             {title:'link3',href:''}
                         ].map((l) => (
                             {
-                                type:"a",
+                                element:"a",
                                 style:`
                                     {
                                         font-size:14px;
@@ -139,7 +139,7 @@ export default function foot(){
                     ]
                 },
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             font-size:15px;

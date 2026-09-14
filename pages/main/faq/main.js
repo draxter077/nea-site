@@ -15,14 +15,14 @@ export default function faq(){
         
     }
     const script = document.createElement('script')
-    script.type = 'application/ld+json'
+    script.element = 'application/ld+json'
     script.text = JSON.stringify(SD)
     document.head.appendChild(script)
 
     return(
         {
             id:"faq",
-            type:"div",
+            element:"div",
             style:`
                 {
                     display:flex;
@@ -54,7 +54,7 @@ export default function faq(){
             ],
             children:[
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             font-size:24px;
@@ -68,7 +68,7 @@ export default function faq(){
 
                 },
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             display:flex;
@@ -84,7 +84,7 @@ export default function faq(){
                                 {query:"Questão teste", answer:"Resposta teste"}
                             ].map(q => (
                             {
-                                type:"div",
+                                element:"div",
                                 style:`
                                     {
                                         display:flex;
@@ -120,7 +120,7 @@ export default function faq(){
                                                     ar.style = "transform:rotate(0deg);"
 
                                                     e.removeEventListener("click",b)
-                                                    e.addEventListener("click",() => a(args))
+                                                    e.addEventListener("click",(args) => a(args))
                                                 }
                                             )
                                         };a(args)}
@@ -128,7 +128,7 @@ export default function faq(){
                                 ],
                                 children:[
                                     {
-                                        type:"div",
+                                        element:"div",
                                         style:`
                                             {
                                                 display:flex;
@@ -139,7 +139,7 @@ export default function faq(){
                                             }`,
                                         children:[
                                             {
-                                                type:"div",
+                                                element:"div",
                                                 style:`
                                                     {
                                                         font-size:18px;
@@ -150,7 +150,7 @@ export default function faq(){
                                                 innerHTML:q.query
                                             },
                                             {
-                                                type:"img",
+                                                element:"img",
                                                 style:`
                                                     {
                                                         height:18px;
@@ -163,7 +163,7 @@ export default function faq(){
                                         ]
                                     },
                                     {
-                                        type:"div",
+                                        element:"div",
                                         style:`
                                             {
                                                 width:100%;
@@ -173,7 +173,7 @@ export default function faq(){
                                             }`,
                                         children:[
                                             {
-                                                type:"div",
+                                                element:"div",
                                                 style:`
                                                     {
                                                         font-size:16px;

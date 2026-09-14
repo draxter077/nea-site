@@ -184,28 +184,29 @@ window.cP = function cP(pageJSON){
             return(classNames)
         }
 
-        let element = document.createElement(objectJSON.type)
+        let element = document.createElement(objectJSON.element)
         if(objectJSON.style) element.className = addClass(objectJSON.style)
 
         if(objectJSON.id) element.id = objectJSON.id
         else element.id = id
-
+        
         if(objectJSON.innerHTML) element.innerHTML = objectJSON.innerHTML
 
         if(objectJSON.src) element.src = objectJSON.src
-
         if(objectJSON.alt) element.alt = objectJSON.alt
 
         if(objectJSON.href) element.href = objectJSON.href
-
         if(objectJSON.target) element.target = objectJSON.target
+
+        if(objectJSON.placeholder) element.placeholder = objectJSON.placeholder
+        if(objectJSON.type) element.type = objectJSON.type
         
         if(objectJSON.events){
             for(let i = 0; i < objectJSON.events.length; i++){
                 let ev = objectJSON.events[i]
                 if(ev.args) if(ev.args.element) ev.args.element = element
-                if(ev.target == "window") window.addEventListener(ev.type, async () => ev.function(ev.args) || ev.function())
-                else element.addEventListener(ev.type, async () => ev.function(ev.args) || ev.function())
+                if(ev.target == "window") window.addEventListener(ev.type, async () => await ev.function(ev.args) || await ev.function())
+                else element.addEventListener(ev.type, async () => await ev.function(ev.args) || await ev.function())
             }
         }
         return(element)

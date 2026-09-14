@@ -1,7 +1,7 @@
 export default function head(){
     return(
         {
-            type:"div",
+            element:"div",
             style:`
                 {
                     position:sticky;
@@ -23,7 +23,7 @@ export default function head(){
                 }`,
             children:[
                 {
-                    type:"img",
+                    element:"img",
                     style:`
                         {
                             height:50px;
@@ -36,7 +36,7 @@ export default function head(){
                     alt:"Logotipo do NEA UFPR"
                 },
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             display:flex;
@@ -58,7 +58,7 @@ export default function head(){
                             {title:'Apoiadores',href:'helpers'}
                         ].map((l) => (
                             {
-                                type:"div",
+                                element:"div",
                                 style:`
                                     {
                                         position:relative;

@@ -2,7 +2,7 @@ export default function sectors(){
     return(
         {
             id:"sectors",
-            type:"div",
+            element:"div",
             style:`
                 {
                     width:100%;

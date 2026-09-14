@@ -2,7 +2,7 @@ export default function events(){
     return(
         {
             id:'events',
-            type:"div",
+            element:"div",
             style:`
                 {
                     display:flex;
@@ -32,7 +32,7 @@ export default function events(){
             ],
             children:[
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             font-size:31px;
@@ -48,7 +48,7 @@ export default function events(){
                     
                 },
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             display:flex;
@@ -63,7 +63,7 @@ export default function events(){
                         }`,
                     children:[
                         {
-                            type:"a",
+                            element:"a",
                             style:`
                                 {
                                     display:flex;
@@ -86,7 +86,7 @@ export default function events(){
                                 }`,
                             children:[
                                 {
-                                    type:"div",
+                                    element:"div",
                                     style:`
                                         {
                                             display:flex;
@@ -96,7 +96,7 @@ export default function events(){
                                         }`,
                                     children:[
                                         {
-                                            type:"div",
+                                            element:"div",
                                             style:`
                                                 {
                                                     font-size:16px;
@@ -109,7 +109,7 @@ export default function events(){
                                             innerHTML:"13 Set 2026"
                                         },
                                         {
-                                            type:"div",
+                                            element:"div",
                                             style:`
                                                 {
                                                     font-size:24px;
@@ -122,7 +122,7 @@ export default function events(){
                                             innerHTML:"Palestra com Sr. Rubens Carvalho"
                                         },
                                         {
-                                            type:"div",
+                                            element:"div",
                                             style:`
                                                 {
                                                     font-size:14px;
@@ -138,7 +138,7 @@ export default function events(){
                             ]
                         },
                         {
-                            type:"div",
+                            element:"div",
                             style:`
                                 {
                                     display:flex;
@@ -157,7 +157,7 @@ export default function events(){
                                     0,0,0,0
                                 ].map((i) => (
                                     {
-                                        type:"div",
+                                        element:"div",
                                         style:`
                                             {
                                                 display:flex;
@@ -175,7 +175,7 @@ export default function events(){
                                             }`,
                                         children:[
                                             {
-                                                type:"img",
+                                                element:"img",
                                                 style:`
                                                     {
                                                         height:100%;
@@ -188,7 +188,7 @@ export default function events(){
                                                 alt:"Foto de um garoto"
                                             },
                                             {
-                                                type:"div",
+                                                element:"div",
                                                 style:`
                                                     {
                                                         display:flex;
@@ -199,7 +199,7 @@ export default function events(){
                                                     }`,
                                                 children:[
                                                     {
-                                                        type:"div",
+                                                        element:"div",
                                                         style:`
                                                             {
                                                                 font-size:15px;
@@ -210,7 +210,7 @@ export default function events(){
                                                         innerHTML:"13/09/2026"
                                                     },
                                                     {
-                                                        type:"div",
+                                                        element:"div",
                                                         style:`
                                                             {
                                                                 font-size:18px;
@@ -221,7 +221,7 @@ export default function events(){
                                                         innerHTML:"Palestra com Sr. Rubens Carvalho"
                                                     },
                                                     {
-                                                        type:"div",
+                                                        element:"div",
                                                         style:`
                                                             {
                                                                 font-size:13px;

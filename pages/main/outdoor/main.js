@@ -1,7 +1,7 @@
 export default function outdoor(){
     return(
         {
-            type:"div",
+            element:"div",
             style:`
                 {
 
@@ -18,7 +18,7 @@ export default function outdoor(){
                 }`,
             children:[
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             font-size:43px;
@@ -29,7 +29,7 @@ export default function outdoor(){
                     innerHTML:"Somos curiosidade, inovação<br>e experiência"
                 },
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             font-size:21px;
@@ -42,7 +42,7 @@ export default function outdoor(){
                     innerHTML:"Unimos a inovação de quem está começando com a experiência de quem já faz"
                 },
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             display:flex;
@@ -60,7 +60,7 @@ export default function outdoor(){
                             {src:"/assets/icons/tiktok.png",href:tiktok_url,alt:"Logotipo do TikTok"}
                         ].map((l) => (
                             {
-                                type:"a",
+                                element:"a",
                                 style:`
                                     {
                                         height:50px;

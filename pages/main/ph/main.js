@@ -2,7 +2,7 @@ export default function ph(){
     return(
         {
             id:"phFoot",
-            type:"a",
+            element:"a",
             style:`
                 {
                     display:flex;
@@ -46,7 +46,7 @@ export default function ph(){
                             function b(){
                                 e.children[1].style.transform = "scale(1)"
                                 e.removeEventListener("mouseout",b)
-                                e.addEventListener("mouseover",() => a(args))
+                                e.addEventListener("mouseover",(args) => a(args))
                             }
                         )
                     };a(args)}
@@ -54,7 +54,7 @@ export default function ph(){
             ],
             children:[
                 {
-                    type:"div",
+                    element:"div",
                     style:`
                         {
                             font-size:16px;
@@ -66,7 +66,7 @@ export default function ph(){
                     innerHTML:"Desenvolvido por"
                 },
                 {
-                    type:"img",
+                    element:"img",
                     style:`
                         {
                             height:35px;

@@ -2,7 +2,7 @@ export default function helpers(){
     return(
         {
             id:"helpers",
-            type:"div",
+            element:"div",
             style:`
                 {
                     width:100%;
