@@ -15,7 +15,7 @@ export default function head(){
                     width:100%;
                     padding:10px 15px;
                     background:var(--colorBlack);
-                    box-shadow:0px 0px 3px 0px var(--colorBlack);
+                    box-shadow:0px 0px 3px 0px var(--colorGray);
                 }
                 :responsive{
                     flex-direction:column;
@@ -26,7 +26,8 @@ export default function head(){
                     element:"img",
                     style:`
                         {
-                            height:50px;
+                            height:40px;
+                            margin:0px 0px 5px;
                         }
                         :responsive{
                             height:75px;
@@ -81,12 +82,11 @@ export default function head(){
                                         content:"";
                                         width:2px;
                                         height:100%;
-                                        background:var(--colorWhite);
+                                        background:var(--colorGray);
                                         transition:width 0.25s;
                                     }
                                     :hover::after{
                                         width:100%;
-                                        background:var(--colorBlack);
                                     }`,
                                 innerHTML:l.title,
                                 events:[

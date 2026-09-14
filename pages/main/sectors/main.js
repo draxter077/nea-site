@@ -5,10 +5,10 @@ export default function sectors(){
             element:"div",
             style:`
                 {
-                    width:100%;
-                    height:50svh;
-                    background:yellow;
-                    margin:2.5% 0px 0px 0px;
+                    display:flex;
+                    flex-direction:column;
+                    width:90%;
+                    margin:5% 0px 0px 0px;
                     opacity:0;
                     transform:translateY(50%);
                     transition:all 0.5s;
@@ -30,7 +30,111 @@ export default function sectors(){
                     };a()}
                 }
             ],
-            innerHTML:"Sectors"
+            children:[
+                {
+                    element:"div",
+                    style:`
+                        {
+                            font-size:31px;
+                            font-weight:500;
+                            color:var(--colorBlack);
+                            background:var(--colorWhite);
+                            padding:5px 10px;
+                            margin:0px 0px 5px 0px;
+                        }
+                        :responsive{
+                            margin:0px 0px 5% 0px;
+                        }`,
+                    innerHTML:"Nossos setores"
+                },
+                {
+                    element:"div",
+                    style:`
+                        {
+                            display:flex;
+                            flex-direction:row;
+                            justify-content:space-around;
+                            flex-wrap:wrap;
+                            width:100%;
+                        }`,
+                    children:[
+                        ...[
+                            {title:"Diretoria",src:"/assets/icons/board.png",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+                            {title:"Conteúdo",src:"/assets/icons/content.png",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+                            {title:"Marketing",src:"/assets/icons/marketing.png",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+                            {title:"Parcerias",src:"/assets/icons/partners.png",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+                            {title:"Logística",src:"/assets/icons/logistics.png",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+                        ].map((n) => (
+                            {
+                                element:"a",
+                                style:`
+                                    {
+                                        display:flex;
+                                        flex-direction:column;
+                                        justify-content:center;
+                                        align-items:center;
+                                        width:30%;
+                                        height:100%;
+                                        aspect-ratio:1;
+                                        border-radius:15px;
+                                        margin:10px 0px;
+                                        padding:10px 15px;
+                                        box-shadow:0px 0px 2px 0px var(--colorWhite);
+                                        cursor:pointer;
+                                        overflow:hidden;
+                                        transition:all 0.25s;
+                                    }
+                                    :responsive{
+                                        width:48%;
+                                        aspect-ratio:1;
+                                        background-size:cover;
+                                        background-position:center;
+                                        margin:0px 0px 2.5% 0px;
+                                    }
+                                    :hover{
+                                        transform:scale(1.025);
+                                    }`,
+                                children:[
+                                    {
+                                        element:"img",
+                                        style:`
+                                            {
+                                                height:30%;
+                                                width:fit-content;
+                                                filter:invert(1);
+                                            }`,
+                                        src:n.src
+                                    },
+                                    {
+                                        element:"div",
+                                        style:`
+                                            {
+                                                font-size:24px;
+                                                font-weight:500;
+                                                color:var(--colorWhite);
+                                                background:var(--colorBlack);
+                                                margin:2.5% 0px 10% 0px;
+                                            }`,
+                                        innerHTML:n.title
+                                    },
+                                    {
+                                        element:"div",
+                                        style:`
+                                            {
+                                                font-size:14px;
+                                                text-align:justify;
+                                                color:var(--colorWhite);
+                                                background:var(--colorBlack);
+                                                width:100%;
+                                            }`,
+                                        innerHTML:n.text
+                                    }
+                                ]
+                            }
+                        ))
+                    ]
+                }
+            ]
         }
     )
 }

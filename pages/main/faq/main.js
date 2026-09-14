@@ -81,7 +81,7 @@ export default function faq(){
                         }`,
                     children:[
                            ...[
-                                {query:"Questão teste", answer:"Resposta teste"}
+                                {query:"Sou da UFPR. Como posso participar?", answer:"Nosso processo seletivo já está no ar! Inscreva-se em..."}
                             ].map(q => (
                             {
                                 element:"div",

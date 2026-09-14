@@ -9,7 +9,7 @@ export default function foot(){
                     align-items:center;
                     width:100%;
                     height:fit-content;
-                    border-top:1px solid var(--colorWhite);
+                    border-top:1px solid var(--colorGray);
                     margin:5% 0px 0px 0px;
                     padding:2% 5% 1%;
                 }
@@ -41,7 +41,7 @@ export default function foot(){
                                     element:"img",
                                     style:`
                                         {
-                                            height:42px;
+                                            height:35px;
                                         }`,
                                     src:"/assets/logo.png",
                                     alt:"Logotipo do NEA"
@@ -50,7 +50,7 @@ export default function foot(){
                                     element:"div",
                                     style:`
                                         {
-                                            font-size:14px;
+                                            font-size:12px;
                                             margin:0px 0px 0px 20px;
                                             color:var(--colorWhite);
                                             font-weight:600;
@@ -130,7 +130,7 @@ export default function foot(){
                                         transition:all 0.5s;
                                     }
                                     :hover{
-                                        border-bottom:1px solid var(--colorBlack);
+                                        border-bottom:1px solid var(--colorGray);
                                     }`,
                                 innerHTML:l.title,
                                 href:l.href
@@ -142,7 +142,7 @@ export default function foot(){
                     element:"div",
                     style:`
                         {
-                            font-size:15px;
+                            font-size:14px;
                             font-weight:600;
                             text-align:center;
                             color:white;

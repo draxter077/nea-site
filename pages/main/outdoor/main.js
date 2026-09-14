@@ -70,6 +70,10 @@ export default function outdoor(){
                                         background-image:url("${l.src}");
                                         background-size:contain;
                                         filter:invert(1);
+                                        transition:all 0.25s;
+                                    }
+                                    :hover{
+                                        transform:scale(1.1);
                                     }`,
                                 target:"_blank",
                                 href:l.href,

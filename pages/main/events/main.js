@@ -9,33 +9,17 @@ export default function events(){
                     flex-direction:column;
                     width:90%;
                     margin:5% 0px 0px 0px;
-                    opacity:0;
-                    transform:translateY(50%);
-                    transition:all 0.5s;
                 }
                 :responsive{
                     width:95%;
                 }`,
-            events:[
-                {
-                    target:"window",
-                    type:"scroll",
-                    function:() => {function a(){
-                        let e = document.getElementById("events")
-                        if(window.scrollY > e.offsetTop - window.innerHeight*0.7){
-                            window.removeEventListener("scroll",a)
-                            e.style.opacity = 1
-                            e.style.transform = "translateY(0%)"
-                        }
-                    };a()}
-                }
-            ],
             children:[
                 {
                     element:"div",
                     style:`
                         {
                             font-size:31px;
+                            font-weight:500;
                             color:var(--colorBlack);
                             background:var(--colorWhite);
                             margin:0px 0px 1% 0px;
@@ -75,7 +59,9 @@ export default function events(){
                                     background-size:contain;
                                     border-radius:15px;
                                     box-shadow:0px 0px 2px 0px var(--colorWhite);
+                                    cursor:pointer;
                                     overflow:hidden;
+                                    transition:all 0.25s;
                                 }
                                 :responsive{
                                     width:100%;
@@ -83,6 +69,9 @@ export default function events(){
                                     background-size:cover;
                                     background-position:center;
                                     margin:0px 0px 2.5% 0px;
+                                }
+                                :hover{
+                                    transform:scale(1.025);
                                 }`,
                             children:[
                                 {
@@ -157,7 +146,7 @@ export default function events(){
                                     0,0,0,0
                                 ].map((i) => (
                                     {
-                                        element:"div",
+                                        element:"a",
                                         style:`
                                             {
                                                 display:flex;
@@ -167,11 +156,16 @@ export default function events(){
                                                 width:100%;
                                                 box-shadow:0px 0px 2px 0px var(--colorWhite);
                                                 border-radius:10px;
+                                                cursor:pointer;
                                                 overflow:hidden;
+                                                transition:all 0.25s;
                                             }
                                             :responsive{
                                                 height:fit-content;
                                                 margin:5px 0px;
+                                            }
+                                            :hover{
+                                                transform:scale(1.025);
                                             }`,
                                         children:[
                                             {
