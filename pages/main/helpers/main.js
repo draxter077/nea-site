@@ -70,7 +70,7 @@ export default function helpers(){
                                 element:"a",
                                 style:`
                                     {
-                                        width:15%;
+                                        width:7.5%;
                                         height:100%;
                                         aspect-ratio:1;
                                         border-radius:15px;

@@ -73,7 +73,7 @@ export default function sectors(){
                                         flex-direction:column;
                                         justify-content:center;
                                         align-items:center;
-                                        width:30%;
+                                        width:18%;
                                         height:100%;
                                         aspect-ratio:1;
                                         border-radius:15px;

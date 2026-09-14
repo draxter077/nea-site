@@ -74,9 +74,10 @@ export default function newsletter(){
                                         justify-content:flex-end;
                                         width:30%;
                                         height:100%;
-                                        aspect-ratio:1;
+                                        aspect-ratio:16/9;
                                         background-image:url("https://img.magnific.com/fotos-gratis/jovem-bonito-vestindo-camiseta-casual-sobre-o-rosto-feliz-de-fundo-azul-sorrindo-com-os-bracos-cruzados-olhando-para-a-camera-pessoa-positiva_839833-12963.jpg?semt=ais_hybrid&w=740&q=80");
                                         background-size:contain;
+                                        background-position:center;
                                         border-radius:15px;
                                         box-shadow:0px 0px 2px 0px var(--colorWhite);
                                         cursor:pointer;
