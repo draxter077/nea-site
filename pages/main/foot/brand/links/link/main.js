@@ -1,19 +1,30 @@
-import img from "./img/main.js"
-
 export default function link(src, href){
-    let style = `
+    return(
         {
-            height:32px;
-            margin:0px 0px 0px 30px;
-            transition:all 0.5s;
+            type:"a",
+            style:`
+                {
+                    height:32px;
+                    margin:0px 0px 0px 30px;
+                    transition:all 0.5s;
+                }
+                :hover{
+                    transform:scale(1.1);
+                }`,
+            href:href,
+            target:"_blank",
+            children:[
+                {
+                    type:"img",
+                    style:`
+                        {
+                            height:100%;
+                            filter:invert(1);
+                        }`,
+                    src:src,
+                    alt:"Logotipo de rede social"
+                }
+            ]
         }
-        :hover{
-            transform:scale(1.1);
-        }`
-
-    const link = cE("a",style)
-    link.appendChild(img(src))
-    link.href = href
-    link.target = "_blank"
-    return(link)
+    )
 }

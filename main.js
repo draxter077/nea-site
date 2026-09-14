@@ -116,75 +116,172 @@ const resetCss = `
     }`
 document.getElementsByTagName("style")[1].innerHTML = resetCss.replaceAll("\n","").replaceAll("\t","").replaceAll(" ","")
 
-window.cE = function cE(t, stl){
-    function addClass(){
-        let classNames = "", types = 0, stls = []
-        stl = stl.replaceAll("\n","").replaceAll("\t","").replaceAll("  ","").replaceAll(", ",",") // Formata o stl recebido
-        // Encontra os tipos (geral, :responsive, :hover...) encontrados no stl
-        types = stl.split("}").length - 1
-        // Separa os parâmetros do estilo principal
-        stls = stl.replaceAll("{","").split("}")[0].split(";") // "atr:value"... o último elemento é "" devido ao split
-        // Organiza os estilos já salvos na tag style
-        let stylesInTag = document.getElementsByTagName("style")[1].innerHTML
-        stylesInTag = stylesInTag.split("}") // .name{atr:value além do resetCss
-        // Separa os nomes dos pares de atributos
-        let classNamesInTag = []
-        let classAtrsInTag = []
-        for(let i = 0; i < stylesInTag.length; i++){
-            try{
-                classAtrsInTag.push(stylesInTag[i].split("{")[1].replaceAll(";",""))
-                classNamesInTag.push(stylesInTag[i].split("{")[0].replaceAll(".",""))
-            }catch{}
-        }
-
-        // Compara o geral, -1 para não pegar o último elemento vazio
-        for(let i = 0; i < stls.length - 1; i++){
-            let boo = classAtrsInTag.indexOf(stls[i])
-            if(boo != -1){classNames += ` ${classNamesInTag[boo]}`}
-            else{
-                let cn = randomName(classNamesInTag)
-                document.getElementsByTagName("style")[1].innerHTML += `.${cn}{${stls[i]};}`
-                classNames += ` ${cn}`
+// Constrói a página a partir do JSON dela
+window.cP = function cP(pageJSON){
+    function cE(objectJSON, id){
+        function addClass(stl){
+            let classNames = "", types = 0, stls = []
+            stl = stl.replaceAll("\n","").replaceAll("\t","").replaceAll("  ","").replaceAll(", ",",") // Formata o stl recebido
+            // Encontra os tipos (geral, :responsive, :hover...) encontrados no stl
+            types = stl.split("}").length - 1
+            // Separa os parâmetros do estilo principal
+            stls = stl.replaceAll("{","").split("}")[0].split(";") // "atr:value"... o último elemento é "" devido ao split
+            // Organiza os estilos já salvos na tag style
+            let stylesInTag = document.getElementsByTagName("style")[1].innerHTML
+            stylesInTag = stylesInTag.split("}") // .name{atr:value além do resetCss
+            // Separa os nomes dos pares de atributos
+            let classNamesInTag = []
+            let classAtrsInTag = []
+            for(let i = 0; i < stylesInTag.length; i++){
+                try{
+                    classAtrsInTag.push(stylesInTag[i].split("{")[1].replaceAll(";",""))
+                    classNamesInTag.push(stylesInTag[i].split("{")[0].replaceAll(".",""))
+                }catch{}
             }
-        }
-        // Compara os específicos, se existentes
-        if(types > 1){
-            for(let i = 1; i < stl.split("}").length - 1; i++){
-                let spec = stl.split("}")[i]
-                // Encontra o tipo do específico e busca por similares
-                if(spec.split(" ")[0] == "@keyframes"){
-                    document.getElementsByTagName("style")[1].innerHTML += spec.replaceAll("[","{").replaceAll("]","}") + "}"
-                }
-                else if(spec.split("{")[0] == ":responsive"){ // CONTINUAR DESENVOLVENDO
-                    let stlsR = spec.split("{")[1].split(";")
-                    for(let k = 0; k < stlsR.length - 1; k++){
-                        let cn = randomName(classNamesInTag)
-                        document.getElementsByTagName("style")[1].innerHTML += `@media screen and (max-width:1000px){.${cn}{${stlsR[k]};}}`
-                        classNames += ` ${cn}`
-                    }
-                }
-                else if(spec.split("{")[0].split("::").length > 0){ // CONTINUAR DESENVOLVENDO
+
+            // Compara o geral, -1 para não pegar o último elemento vazio
+            for(let i = 0; i < stls.length - 1; i++){
+                let boo = classAtrsInTag.indexOf(stls[i])
+                if(boo != -1){classNames += ` ${classNamesInTag[boo]}`}
+                else{
                     let cn = randomName(classNamesInTag)
-                    document.getElementsByTagName("style")[1].innerHTML += `.${cn}${spec}}`
+                    document.getElementsByTagName("style")[1].innerHTML += `.${cn}{${stls[i]};}`
                     classNames += ` ${cn}`
                 }
-                else if(spec.split("{")[0].split(":").length > 1){ // CONTINUAR DESENVOLVENDO
-                    let xPseudo = spec.split("{")[0].split(":")[1]
-                    let stlsX = spec.split("{")[1].split(";")
-                    for(let k = 0; k < stlsX.length - 1; k++){
+            }
+            // Compara os específicos, se existentes
+            if(types > 1){
+                for(let i = 1; i < stl.split("}").length - 1; i++){
+                    let spec = stl.split("}")[i]
+                    // Encontra o tipo do específico e busca por similares
+                    if(spec.split(" ")[0] == "@keyframes"){
+                        document.getElementsByTagName("style")[1].innerHTML += spec.replaceAll("[","{").replaceAll("]","}") + "}"
+                    }
+                    else if(spec.split("{")[0] == ":responsive"){ // CONTINUAR DESENVOLVENDO
+                        let stlsR = spec.split("{")[1].split(";")
+                        for(let k = 0; k < stlsR.length - 1; k++){
+                            let cn = randomName(classNamesInTag)
+                            document.getElementsByTagName("style")[1].innerHTML += `@media screen and (max-width:1000px){.${cn}{${stlsR[k]};}}`
+                            classNames += ` ${cn}`
+                        }
+                    }
+                    else if(spec.split("{")[0].split("::").length > 0){ // CONTINUAR DESENVOLVENDO
                         let cn = randomName(classNamesInTag)
-                        document.getElementsByTagName("style")[1].innerHTML += `.${cn}:${xPseudo}{${stlsX[k]};}`
+                        document.getElementsByTagName("style")[1].innerHTML += `.${cn}${spec}}`
                         classNames += ` ${cn}`
+                    }
+                    else if(spec.split("{")[0].split(":").length > 1){ // CONTINUAR DESENVOLVENDO
+                        let xPseudo = spec.split("{")[0].split(":")[1]
+                        let stlsX = spec.split("{")[1].split(";")
+                        for(let k = 0; k < stlsX.length - 1; k++){
+                            let cn = randomName(classNamesInTag)
+                            document.getElementsByTagName("style")[1].innerHTML += `.${cn}:${xPseudo}{${stlsX[k]};}`
+                            classNames += ` ${cn}`
+                        }
                     }
                 }
             }
+            return(classNames)
         }
-        return(classNames)
+
+        let element = document.createElement(objectJSON.type)
+        if(objectJSON.style) element.className = addClass(objectJSON.style)
+
+        if(objectJSON.id) element.id = objectJSON.id
+        else element.id = id
+
+        if(objectJSON.innerHTML) element.innerHTML = objectJSON.innerHTML
+
+        if(objectJSON.src) element.src = objectJSON.src
+
+        if(objectJSON.alt) element.alt = objectJSON.alt
+
+        if(objectJSON.href) element.href = objectJSON.href
+
+        if(objectJSON.target) element.target = objectJSON.target
+        
+        if(objectJSON.events){
+            for(let i = 0; i < objectJSON.events.length; i++){
+                let ev = objectJSON.events[i]
+                if(ev.args) if(ev.args.element) ev.args.element = element
+                if(ev.target == "window") window.addEventListener(ev.type, async () => ev.function(ev.args) || ev.function())
+                else element.addEventListener(ev.type, async () => ev.function(ev.args) || ev.function())
+            }
+        }
+        return(element)
     }
 
-    const el = document.createElement(t)
-    if(stl != undefined){el.className = addClass()}
-    return(el)
+    let pageObject = cE(pageJSON,`0`)
+
+    for(let a = 0; a < pageJSON.children.length; a++){
+        let c0JSON = pageJSON.children[a]
+        let c0Object = cE(c0JSON,`0 ${a}`)
+        if(c0JSON.children){
+            for(let b = 0; b < c0JSON.children.length; b++){
+                let c1JSON = c0JSON.children[b]
+                let c1Object = cE(c1JSON,`0 ${a} ${b}`)
+                if(c1JSON.children){
+                    for(let c = 0; c < c1JSON.children.length; c++){
+                        let c2JSON = c1JSON.children[c]
+                        let c2Object = cE(c2JSON,`0 ${a} ${b} ${c}`)
+                        if(c2JSON.children){
+                            for(let d = 0; d < c2JSON.children.length; d++){
+                                let c3JSON = c2JSON.children[d]
+                                let c3Object = cE(c3JSON,`0 ${a} ${b} ${c} ${d}`)
+                                if(c3JSON.children){
+                                    for(let e = 0; e < c3JSON.children.length; e++){
+                                        let c4JSON = c3JSON.children[e]
+                                        let c4Object = cE(c4JSON,`0 ${a} ${b} ${c} ${d} ${e}`)
+                                        if(c4JSON.children){
+                                            for(let f = 0; f < c4JSON.children.length; f++){
+                                                let c5JSON = c4JSON.children[f]
+                                                let c5Object = cE(c5JSON,`0 ${a} ${b} ${c} ${d} ${e} ${f}`)
+                                                if(c5JSON.children){
+                                                    for(let g = 0; g < c5JSON.children.length; g++){
+                                                        let c6JSON = c5JSON.children[g]
+                                                        let c6Object = cE(c6JSON,`0 ${a} ${b} ${c} ${d} ${e} ${f} ${g}`)
+                                                        if(c6JSON.children){
+                                                            for(let h = 0; h < c6JSON.children.length; h++){
+                                                                let c7JSON = c6JSON.children[h]
+                                                                let c7Object = cE(c7JSON,`0 ${a} ${b} ${c} ${d} ${e} ${f} ${g} ${h}`)
+                                                                if(c7JSON.children){
+                                                                    for(let i = 0; i < c7JSON.children.length; i++){
+                                                                        let c8JSON = c7JSON.children[i]
+                                                                        let c8Object = cE(c8JSON,`0 ${a} ${b} ${c} ${d} ${e} ${f} ${g} ${h} ${i}`)
+                                                                        if(c8JSON.children){
+                                                                            for(let j = 0; i < c8JSON.children.length; j++){
+                                                                                let c9JSON = c8JSON.children[j]
+                                                                                let c9Object = cE(c9JSON,`0 ${a} ${b} ${c} ${d} ${e} ${f} ${g} ${h} ${i} ${j}`)
+                                                                                c8Object.appendChild(c9Object)
+                                                                            }
+                                                                        }
+                                                                        c7Object.appendChild(c8Object)
+                                                                    }
+                                                                }
+                                                                c6Object.appendChild(c7Object)
+                                                            }
+                                                        }
+                                                        c5Object.appendChild(c6Object)
+                                                    }
+                                                }
+                                                c4Object.appendChild(c5Object)
+                                            }
+                                        }
+                                        c3Object.appendChild(c4Object)
+                                    }
+                                }
+                                c2Object.appendChild(c3Object)
+                            }
+                        }
+                        c1Object.appendChild(c2Object)
+                    }
+                }
+                c0Object.appendChild(c1Object)
+            }
+        }
+        pageObject.appendChild(c0Object)
+    }
+    return(pageObject)
 }
 
 window.construct = async function construct(d){
@@ -193,16 +290,16 @@ window.construct = async function construct(d){
         root.innerHTML = ""
         if(window.location.href.split("br/")[1]){
             let path = window.location.href.split("br/")[1]
-            if(path == "admin"){root.appendChild(admin())}
-            else{root.appendChild(main())}
+            if(path == "admin"){root.appendChild(cP(admin()))}
+            else{root.appendChild(cP(main()))}
         }
-        else{root.appendChild(main())}
+        else{root.appendChild(cP(main()))}
     }
     else{
         root.style.opacity = 0
         await new Promise(r => setTimeout(r,600))
         root.innerHTML = ""
-        if(d.page == "admin"){root.appendChild(admin(d.data))}
+        if(d.page == "admin"){root.appendChild(cP(admin(d.data)))}
         await new Promise(r => setTimeout(r,100))
         root.style.opacity = 1
     }

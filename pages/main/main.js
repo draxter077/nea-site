@@ -41,24 +41,28 @@ export default function main(){
     script.text = JSON.stringify(SD)
     document.head.appendChild(script)
 
-    let style = `
+    return(
         {
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            width:100%;
-            height:fit-content;
-        }`
-
-    const main = cE("div",style)
-    main.appendChild(head())
-    main.appendChild(outdoor())
-    main.appendChild(events())
-    main.appendChild(newsletter())
-    main.appendChild(sectors())
-    main.appendChild(helpers())
-    main.appendChild(faq())
-    main.appendChild(foot())
-    main.appendChild(ph())
-    return(main)
+            type:"div",
+            style:`
+                {
+                    display:flex;
+                    flex-direction:column;
+                    align-items:center;
+                    width:100%;
+                    height:fit-content;
+                }`,
+            children:[
+                head(),
+                outdoor(),
+                events(),
+                newsletter(),
+                sectors(),
+                helpers(),
+                faq(),
+                foot(),
+                ph()
+            ]
+        }
+    )
 }

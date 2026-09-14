@@ -1,0 +1,39 @@
+export default function query(q){
+    return(
+        {
+            type:"div",
+            style:`
+                {
+                    display:flex;
+                    flex-direction:row;
+                    align-items:center;
+                    justify-content:space-between;
+                    width:100%;
+                }`,
+            children:[
+                {
+                    type:"div",
+                    style:`
+                        {
+                            font-size:18px;
+                            color:var(--colorWhite);
+                            font-weight:600;
+                            width:80%;
+                        }`,
+                    innerHTML:q
+                },
+                {
+                    type:"img",
+                    style:`
+                        {
+                            height:18px;
+                            transition:all 0.5s;
+                            filter:invert(1);
+                        }`,
+                    src:"/assets/icons/arrow.png",
+                    alt:"Flecha para abertura da resposta"
+                }
+            ]
+        }
+    )
+}
