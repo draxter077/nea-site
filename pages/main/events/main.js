@@ -1,5 +1,3 @@
-import item from "./item/main.js"
-
 export default function events(){
     return(
         {
@@ -11,10 +9,27 @@ export default function events(){
                     flex-direction:column;
                     width:90%;
                     margin:5% 0px 0px 0px;
+                    opacity:0;
+                    transform:translateY(50%);
+                    transition:all 0.5s;
                 }
                 :responsive{
                     width:95%;
                 }`,
+            events:[
+                {
+                    target:"window",
+                    type:"scroll",
+                    function:() => {function a(){
+                        let e = document.getElementById("events")
+                        if(window.scrollY > e.offsetTop - window.innerHeight*0.7){
+                            window.removeEventListener("scroll",a)
+                            e.style.opacity = 1
+                            e.style.transform = "translateY(0%)"
+                        }
+                    };a()}
+                }
+            ],
             children:[
                 {
                     type:"div",
@@ -138,10 +153,88 @@ export default function events(){
                                     margin:0px;
                                 }`,
                             children:[
-                                item(),
-                                item(),
-                                item(),
-                                item()
+                                ...[
+                                    0,0,0,0
+                                ].map((i) => (
+                                    {
+                                        type:"div",
+                                        style:`
+                                            {
+                                                display:flex;
+                                                flex-direction:row;
+                                                align-items:center;
+                                                height:23%;
+                                                width:100%;
+                                                box-shadow:0px 0px 2px 0px var(--colorWhite);
+                                                border-radius:10px;
+                                                overflow:hidden;
+                                            }
+                                            :responsive{
+                                                height:fit-content;
+                                                margin:5px 0px;
+                                            }`,
+                                        children:[
+                                            {
+                                                type:"img",
+                                                style:`
+                                                    {
+                                                        height:100%;
+                                                        aspect-ratio:1;
+                                                    }
+                                                    :responsive{
+                                                        width:25vw;
+                                                    }`,
+                                                src:"https://img.magnific.com/fotos-gratis/jovem-bonito-vestindo-camiseta-casual-sobre-o-rosto-feliz-de-fundo-azul-sorrindo-com-os-bracos-cruzados-olhando-para-a-camera-pessoa-positiva_839833-12963.jpg?semt=ais_hybrid&w=740&q=80",
+                                                alt:"Foto de um garoto"
+                                            },
+                                            {
+                                                type:"div",
+                                                style:`
+                                                    {
+                                                        display:flex;
+                                                        flex-direction:column;
+                                                        align-items:right;
+                                                        width:100%;
+                                                        padding:5px 10px;
+                                                    }`,
+                                                children:[
+                                                    {
+                                                        type:"div",
+                                                        style:`
+                                                            {
+                                                                font-size:15px;
+                                                                color:var(--colorWhite);
+                                                                width:100%;
+                                                                text-align:right;
+                                                            }`,
+                                                        innerHTML:"13/09/2026"
+                                                    },
+                                                    {
+                                                        type:"div",
+                                                        style:`
+                                                            {
+                                                                font-size:18px;
+                                                                font-weight:500;
+                                                                color:var(--colorWhite);
+                                                                width:100%;
+                                                            }`,
+                                                        innerHTML:"Palestra com Sr. Rubens Carvalho"
+                                                    },
+                                                    {
+                                                        type:"div",
+                                                        style:`
+                                                            {
+                                                                font-size:13px;
+                                                                color:var(--colorWhite);
+                                                                width:100%;
+                                                            }`,
+                                                        innerHTML:"Sr. Rubens Carvalho é advogado"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ))
                             ]
                         }
                     ]

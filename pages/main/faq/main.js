@@ -1,5 +1,3 @@
-import question from "./question/main.js"
-
 export default function faq(){
     const SD = {
         "@context":"https://schema.org",
@@ -20,15 +18,6 @@ export default function faq(){
     script.type = 'application/ld+json'
     script.text = JSON.stringify(SD)
     document.head.appendChild(script)
-
-    function scroll0(){
-        let e = document.getElementById("faq")
-        if(window.scrollY > e.offsetTop - window.innerHeight*0.7){
-            window.removeEventListener("scroll",scroll0)
-            e.style.opacity = 1
-            e.style.transform = "translateY(0%)"
-        }
-    }
 
     return(
         {
@@ -53,7 +42,14 @@ export default function faq(){
                 {
                     target:"window",
                     type:"scroll",
-                    function:scroll0
+                    function:() => {function a(){
+                        let e = document.getElementById("faq")
+                        if(window.scrollY > e.offsetTop - window.innerHeight*0.7){
+                            window.removeEventListener("scroll",a)
+                            e.style.opacity = 1
+                            e.style.transform = "translateY(0%)"
+                        }
+                    };a()}
                 }
             ],
             children:[
@@ -84,7 +80,116 @@ export default function faq(){
                             margin:2.5% 0px 0px 0px;
                         }`,
                     children:[
-                        question("Sou da UFPR. Como faço para participar?","Nosso próximo processo seletivo é 14/09")
+                           ...[
+                                {query:"Questão teste", answer:"Resposta teste"}
+                            ].map(q => (
+                            {
+                                type:"div",
+                                style:`
+                                    {
+                                        display:flex;
+                                        flex-direction:column;
+                                        width:49%;
+                                        box-shadow:0px 0px 3px 0px white;
+                                        padding:10px 15px;
+                                        border-radius:15px;
+                                        margin:5px 0px;
+                                        cursor:pointer;
+                                    }
+                                    :responsive{
+                                        width:100%;
+                                    }`,
+                                events:[
+                                    {
+                                        target:"element",
+                                        type:"click",
+                                        args:{element:"element"},
+                                        function:(args) => {function a(args){
+                                            let e = args.element
+                                            let as = e.children[1]
+                                            let ar = e.children[0].children[1]
+
+                                            as.style = "max-height:1000px;"
+                                            ar.style = "transform:rotate(180deg);"
+
+                                            e.removeEventListener("click",a)
+                                            e.addEventListener(
+                                                "click",
+                                                function b(){
+                                                    as.style = "max-height:0px;"
+                                                    ar.style = "transform:rotate(0deg);"
+
+                                                    e.removeEventListener("click",b)
+                                                    e.addEventListener("click",() => a(args))
+                                                }
+                                            )
+                                        };a(args)}
+                                    }
+                                ],
+                                children:[
+                                    {
+                                        type:"div",
+                                        style:`
+                                            {
+                                                display:flex;
+                                                flex-direction:row;
+                                                align-items:center;
+                                                justify-content:space-between;
+                                                width:100%;
+                                            }`,
+                                        children:[
+                                            {
+                                                type:"div",
+                                                style:`
+                                                    {
+                                                        font-size:18px;
+                                                        color:var(--colorWhite);
+                                                        font-weight:600;
+                                                        width:80%;
+                                                    }`,
+                                                innerHTML:q.query
+                                            },
+                                            {
+                                                type:"img",
+                                                style:`
+                                                    {
+                                                        height:18px;
+                                                        transition:all 0.5s;
+                                                        filter:invert(1);
+                                                    }`,
+                                                src:"/assets/icons/arrow.png",
+                                                alt:"Flecha para abertura da resposta"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        type:"div",
+                                        style:`
+                                            {
+                                                width:100%;
+                                                max-height:0px;
+                                                overflow:hidden;
+                                                transition:max-height 0.5s;
+                                            }`,
+                                        children:[
+                                            {
+                                                type:"div",
+                                                style:`
+                                                    {
+                                                        font-size:16px;
+                                                        text-align:justify;
+                                                        color:var(--colorWhite);
+                                                        width:100%;
+                                                        padding:2%;
+                                                    }`,
+                                                innerHTML:q.answer
+                                            }
+                                        ]
+                                    }
+                                ]
+
+                            }
+                        ))
                     ]
                 }
             ]

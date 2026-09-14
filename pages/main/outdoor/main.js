@@ -1,5 +1,3 @@
-import link from "./link/main.js"
-
 export default function outdoor(){
     return(
         {
@@ -56,9 +54,28 @@ export default function outdoor(){
                             margin:7.5% 0px 0px 0px;
                         }`,
                     children:[
-                        link("/assets/icons/instagram.png",instagram_url,"Logotipo do Instagram"),
-                        link("/assets/icons/youtube.png",youtube_url,"Logotipo do YouTube"),
-                        link("/assets/icons/tiktok.png",tiktok_url,"Logotipo do TikTok")
+                        ...[
+                            {src:"/assets/icons/instagram.png",href:instagram_url,alt:"Logotipo do Instagram"},
+                            {src:"/assets/icons/youtube.png",href:youtube_url,alt:"Logotipo do YouTube"},
+                            {src:"/assets/icons/tiktok.png",href:tiktok_url,alt:"Logotipo do TikTok"}
+                        ].map((l) => (
+                            {
+                                type:"a",
+                                style:`
+                                    {
+                                        height:50px;
+                                        width:50px;
+                                        margin:0px 50px;
+                                        cursor:pointer;
+                                        background-image:url("${l.src}");
+                                        background-size:contain;
+                                        filter:invert(1);
+                                    }`,
+                                target:"_blank",
+                                href:l.href,
+                                alt:l.alt
+                            }
+                        ))
                     ]
                     
                 }
