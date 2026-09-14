@@ -9,7 +9,7 @@ export default function foot(){
                     align-items:center;
                     width:100%;
                     height:fit-content;
-                    border-top:1px solid var(--colorGray);
+                    border-top:1px solid var(--colorGreen);
                     margin:5% 0px 0px 0px;
                     padding:2% 5% 1%;
                 }
@@ -79,10 +79,7 @@ export default function foot(){
                                             {
                                                 height:32px;
                                                 width:64px;
-                                                background-image:url("${l.src}");
-                                                background-size:contain;
-                                                background-repeat:no-repeat;
-                                                background-position:center;
+                                                background:url("${l.src}") center / contain no-repeat;
                                                 filter:invert(1);
                                                 transition:all 0.15s;
                                             }
@@ -124,13 +121,13 @@ export default function foot(){
                                         font-size:14px;
                                         font-weight:600;
                                         color:var(--colorWhite);
-                                        border-bottom:1px solid var(--colorWhite);
+                                        border-bottom:1px solid var(--colorGreen);
                                         padding:0px 5px;
                                         cursor:pointer;
                                         transition:all 0.5s;
                                     }
                                     :hover{
-                                        border-bottom:1px solid var(--colorGray);
+                                        border-bottom:1px solid var(--colorWhite);
                                     }`,
                                 innerHTML:l.title,
                                 href:l.href
@@ -145,7 +142,7 @@ export default function foot(){
                             font-size:14px;
                             font-weight:600;
                             text-align:center;
-                            color:white;
+                            color:var(--colorWhite);
                             margin:20px 0px 0px 0px;
                         }`,
                     innerHTML:`NEA UFPR © ${new Date().getFullYear()} | Todos os direitos reservados`

@@ -15,7 +15,7 @@ export default function head(){
                     width:100%;
                     padding:10px 15px;
                     background:var(--colorBlack);
-                    box-shadow:0px 0px 3px 0px var(--colorGray);
+                    box-shadow:0px 0px 3px 0px var(--colorGreen);
                 }
                 :responsive{
                     flex-direction:column;
@@ -82,7 +82,7 @@ export default function head(){
                                         content:"";
                                         width:2px;
                                         height:100%;
-                                        background:var(--colorGray);
+                                        background:var(--colorGreen);
                                         transition:width 0.25s;
                                     }
                                     :hover::after{

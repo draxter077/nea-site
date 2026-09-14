@@ -7,11 +7,11 @@ export default function events(){
                 {
                     display:flex;
                     flex-direction:column;
-                    width:90%;
+                    width:100%;
                     margin:5% 0px 0px 0px;
-                }
-                :responsive{
-                    width:95%;
+                    padding:1% 5%;
+                    background:var(--colorGreen);
+                    box-shadow:0px 0px 2.5px 5px var(--colorGreen);
                 }`,
             children:[
                 {
@@ -21,14 +21,14 @@ export default function events(){
                             font-size:31px;
                             font-weight:500;
                             color:var(--colorBlack);
-                            background:var(--colorWhite);
                             margin:0px 0px 1% 0px;
-                            padding:5px 10px;
+                            padding:0px 5px;
+                            border-bottom:2px solid var(--colorBlack);
                         }
                         :responsive{
                             margin:0px 0px 5% 0px;
                         }`,
-                    innerHTML:"Próximos eventos"
+                    innerHTML:"Nossos eventos"
                     
                 },
                 {
@@ -53,76 +53,60 @@ export default function events(){
                                     display:flex;
                                     flex-direction:column;
                                     justify-content:flex-end;
+                                    align-items:flex-end;
                                     height:100%;
                                     aspect-ratio:16/9;
-                                    background-image:url("https://img.magnific.com/fotos-gratis/jovem-bonito-vestindo-camiseta-casual-sobre-o-rosto-feliz-de-fundo-azul-sorrindo-com-os-bracos-cruzados-olhando-para-a-camera-pessoa-positiva_839833-12963.jpg?semt=ais_hybrid&w=740&q=80");
-                                    background-size:contain;
-                                    border-radius:15px;
-                                    box-shadow:0px 0px 2px 0px var(--colorWhite);
-                                    cursor:pointer;
+                                    background:var(--colorBlack) url("https://media.licdn.com/dms/image/v2/C4D03AQGPRKS5hdmJRA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1659711073845?e=2147483647&v=beta&t=UQoFXWpvS0cLsGCiyGcTrAJZl8J7g7_BEqyScLFqbfM") center / contain no-repeat;
+                                    border-radius:5px;
+                                    box-shadow:0px 0px 2px 0px var(--colorBlack);
                                     overflow:hidden;
-                                    transition:all 0.25s;
                                 }
                                 :responsive{
                                     width:100%;
                                     aspect-ratio:1;
                                     background-size:cover;
-                                    background-position:center;
                                     margin:0px 0px 2.5% 0px;
-                                }
-                                :hover{
-                                    transform:scale(1.025);
                                 }`,
                             children:[
                                 {
                                     element:"div",
                                     style:`
                                         {
-                                            display:flex;
-                                            flex-direction:column;
-                                            align-items:flex-end;
-                                            width:100%;
+                                            font-size:16px;
+                                            font-weight:500;
+                                            width:fit-content;
+                                            color:var(--colorBlack);
+                                            background:var(--colorGreen);
+                                            padding:5px 10px;
+                                            border-radius:5px 0px 0px 0px;
                                         }`,
-                                    children:[
+                                    innerHTML:"13 Set 2026"
+                                },
+                                {
+                                    element:"div",
+                                    style:`
                                         {
-                                            element:"div",
-                                            style:`
-                                                {
-                                                    font-size:16px;
-                                                    width:fit-content;
-                                                    color:var(--colorWhite);
-                                                    background:var(--colorBlack);
-                                                    padding:5px 10px;
-                                                    border-radius:15px 0px 0px 0px;
-                                                }`,
-                                            innerHTML:"13 Set 2026"
-                                        },
+                                            font-size:24px;
+                                            font-weight:500;
+                                            color:var(--colorWhite);
+                                            background:var(--colorBlack);
+                                            border-top:1px solid var(--colorGreen);
+                                            width:100%;
+                                            padding:5px 10px 0px;
+                                        }`,
+                                    innerHTML:"Palestra com Sr. Rubens Carvalho"
+                                },
+                                {
+                                    element:"div",
+                                    style:`
                                         {
-                                            element:"div",
-                                            style:`
-                                                {
-                                                    font-size:24px;
-                                                    font-weight:500;
-                                                    color:var(--colorWhite);
-                                                    background:var(--colorBlack);
-                                                    width:100%;
-                                                    padding:5px 10px 0px;
-                                                }`,
-                                            innerHTML:"Palestra com Sr. Rubens Carvalho"
-                                        },
-                                        {
-                                            element:"div",
-                                            style:`
-                                                {
-                                                    font-size:14px;
-                                                    color:var(--colorWhite);
-                                                    background:var(--colorBlack);
-                                                    width:100%;
-                                                    padding:0px 10px 10px;
-                                                }`,
-                                            innerHTML:"Sr. Rubens Carvalho é advogado"
-                                        },
-                                    ]
+                                            font-size:14px;
+                                            color:var(--colorWhite);
+                                            background:var(--colorBlack);
+                                            width:100%;
+                                            padding:0px 10px 10px;
+                                        }`,
+                                    innerHTML:"Sr. Rubens Carvalho é advogado"
                                 }
                             ]
                         },
@@ -154,18 +138,14 @@ export default function events(){
                                                 align-items:center;
                                                 height:23%;
                                                 width:100%;
-                                                box-shadow:0px 0px 2px 0px var(--colorWhite);
-                                                border-radius:10px;
-                                                cursor:pointer;
+                                                box-shadow:0px 0px 2px 0px var(--colorBlack);
+                                                background:var(--colorBlack);
+                                                border-radius:5px;
                                                 overflow:hidden;
-                                                transition:all 0.25s;
                                             }
                                             :responsive{
                                                 height:fit-content;
                                                 margin:5px 0px;
-                                            }
-                                            :hover{
-                                                transform:scale(1.025);
                                             }`,
                                         children:[
                                             {
@@ -178,7 +158,7 @@ export default function events(){
                                                     :responsive{
                                                         width:25vw;
                                                     }`,
-                                                src:"https://img.magnific.com/fotos-gratis/jovem-bonito-vestindo-camiseta-casual-sobre-o-rosto-feliz-de-fundo-azul-sorrindo-com-os-bracos-cruzados-olhando-para-a-camera-pessoa-positiva_839833-12963.jpg?semt=ais_hybrid&w=740&q=80",
+                                                src:"https://media.licdn.com/dms/image/v2/C4D03AQGPRKS5hdmJRA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1659711073845?e=2147483647&v=beta&t=UQoFXWpvS0cLsGCiyGcTrAJZl8J7g7_BEqyScLFqbfM",
                                                 alt:"Foto de um garoto"
                                             },
                                             {
@@ -187,8 +167,8 @@ export default function events(){
                                                     {
                                                         display:flex;
                                                         flex-direction:column;
-                                                        align-items:right;
                                                         width:100%;
+                                                        height:100%;
                                                         padding:5px 10px;
                                                     }`,
                                                 children:[
@@ -197,8 +177,11 @@ export default function events(){
                                                         style:`
                                                             {
                                                                 font-size:15px;
-                                                                color:var(--colorWhite);
+                                                                font-weight:500;
+                                                                color:var(--colorGreen);
+                                                                border-bottom:1px solid var(--colorGreen);
                                                                 width:100%;
+                                                                padding:5px 0px;
                                                                 text-align:right;
                                                             }`,
                                                         innerHTML:"13/09/2026"
@@ -207,22 +190,35 @@ export default function events(){
                                                         element:"div",
                                                         style:`
                                                             {
-                                                                font-size:18px;
-                                                                font-weight:500;
-                                                                color:var(--colorWhite);
+                                                                display:flex;
+                                                                flex-direction:column;
+                                                                justify-content:center;
                                                                 width:100%;
+                                                                height:100%;
                                                             }`,
-                                                        innerHTML:"Palestra com Sr. Rubens Carvalho"
-                                                    },
-                                                    {
-                                                        element:"div",
-                                                        style:`
+                                                        children:[
                                                             {
-                                                                font-size:13px;
-                                                                color:var(--colorWhite);
-                                                                width:100%;
-                                                            }`,
-                                                        innerHTML:"Sr. Rubens Carvalho é advogado"
+                                                                element:"div",
+                                                                style:`
+                                                                    {
+                                                                        font-size:18px;
+                                                                        font-weight:500;
+                                                                        color:var(--colorWhite);
+                                                                        width:100%;
+                                                                    }`,
+                                                                innerHTML:"Palestra com Sr. Rubens Carvalho"
+                                                            },
+                                                            {
+                                                                element:"div",
+                                                                style:`
+                                                                    {
+                                                                        font-size:13px;
+                                                                        color:var(--colorWhite);
+                                                                        width:100%;
+                                                                    }`,
+                                                                innerHTML:"Sr. Rubens Carvalho é advogado"
+                                                            }
+                                                        ]
                                                     }
                                                 ]
                                             }

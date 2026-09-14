@@ -23,7 +23,7 @@ export default function outdoor(){
                         {
                             font-size:43px;
                             font-weight:600;
-                            text-shadow:0px 0px 3px var(--colorWhite);
+                            text-shadow:0px 0px 3px var(--colorGreen);
                             color:var(--colorWhite);
                         }`,
                     innerHTML:"Somos curiosidade, inovação<br>e experiência"
@@ -63,13 +63,12 @@ export default function outdoor(){
                                 element:"a",
                                 style:`
                                     {
-                                        height:50px;
-                                        width:50px;
+                                        height:70px;
                                         margin:0px 50px;
+                                        padding:15px;
+                                        border-radius:50%;
                                         cursor:pointer;
-                                        background-image:url("${l.src}");
-                                        background-size:contain;
-                                        filter:invert(1);
+                                        background:var(--colorGreen);
                                         transition:all 0.25s;
                                     }
                                     :hover{
@@ -77,7 +76,18 @@ export default function outdoor(){
                                     }`,
                                 target:"_blank",
                                 href:l.href,
-                                alt:l.alt
+                                alt:l.alt,
+                                children:[
+                                    {
+                                        element:"img",
+                                        style:`
+                                            {
+                                                height:100%;
+                                            }`,
+                                        src:l.src,
+                                        alt:l.alt
+                                    }
+                                ]
                             }
                         ))
                     ]

@@ -37,8 +37,8 @@ export default function newsletter(){
                         {
                             font-size:31px;
                             font-weight:500;
-                            color:var(--colorBlack);
-                            background:var(--colorWhite);
+                            color:var(--colorblack);
+                            background:var(--colorGreen);
                             margin:0px 0px 1% 0px;
                             padding:5px 10px;
                         }
@@ -75,11 +75,9 @@ export default function newsletter(){
                                         width:30%;
                                         height:100%;
                                         aspect-ratio:16/9;
-                                        background-image:url("https://img.magnific.com/fotos-gratis/jovem-bonito-vestindo-camiseta-casual-sobre-o-rosto-feliz-de-fundo-azul-sorrindo-com-os-bracos-cruzados-olhando-para-a-camera-pessoa-positiva_839833-12963.jpg?semt=ais_hybrid&w=740&q=80");
-                                        background-size:contain;
-                                        background-position:center;
-                                        border-radius:15px;
-                                        box-shadow:0px 0px 2px 0px var(--colorWhite);
+                                        background:var(--colorBlack) url("https://img.magnific.com/fotos-gratis/jovem-bonito-vestindo-camiseta-casual-sobre-o-rosto-feliz-de-fundo-azul-sorrindo-com-os-bracos-cruzados-olhando-para-a-camera-pessoa-positiva_839833-12963.jpg?semt=ais_hybrid&w=740&q=80") center / contain no-repeat;
+                                        border-radius:5px;
+                                        box-shadow:0px 0px 2px 1px var(--colorGreen);
                                         cursor:pointer;
                                         overflow:hidden;
                                         transition:all 0.25s;
@@ -88,7 +86,6 @@ export default function newsletter(){
                                         width:48%;
                                         aspect-ratio:1;
                                         background-size:cover;
-                                        background-position:center;
                                         margin:0px 0px 2.5% 0px;
                                     }
                                     :hover{
@@ -110,11 +107,12 @@ export default function newsletter(){
                                                 style:`
                                                     {
                                                         font-size:16px;
+                                                        font-weight:500;
                                                         width:fit-content;
-                                                        color:var(--colorWhite);
-                                                        background:var(--colorBlack);
+                                                        color:var(--colorBlack);
+                                                        background:var(--colorGreen);
                                                         padding:5px 10px;
-                                                        border-radius:15px 0px 0px 0px;
+                                                        border-radius:5px 0px 0px 0px;
                                                     }`,
                                                 innerHTML:n.date
                                             },
@@ -126,6 +124,7 @@ export default function newsletter(){
                                                         font-weight:500;
                                                         color:var(--colorWhite);
                                                         background:var(--colorBlack);
+                                                        border-top:1px solid var(--colorGreen);
                                                         width:100%;
                                                         padding:5px 10px 0px;
                                                     }`,

@@ -37,9 +37,7 @@ export default function sectors(){
                         {
                             font-size:31px;
                             font-weight:500;
-                            color:var(--colorBlack);
-                            background:var(--colorWhite);
-                            padding:5px 10px;
+                            color:var(--colorGreen);
                             margin:0px 0px 5px 0px;
                         }
                         :responsive{
@@ -76,13 +74,12 @@ export default function sectors(){
                                         width:18%;
                                         height:100%;
                                         aspect-ratio:1;
-                                        border-radius:15px;
+                                        border-radius:5px;
                                         margin:10px 0px;
                                         padding:10px 15px;
-                                        box-shadow:0px 0px 2px 0px var(--colorWhite);
-                                        cursor:pointer;
+                                        box-shadow:0px 0px 2px 0px var(--colorGreen);
+                                        background:var(--colorGreen);
                                         overflow:hidden;
-                                        transition:all 0.25s;
                                     }
                                     :responsive{
                                         width:48%;
@@ -90,9 +87,6 @@ export default function sectors(){
                                         background-size:cover;
                                         background-position:center;
                                         margin:0px 0px 2.5% 0px;
-                                    }
-                                    :hover{
-                                        transform:scale(1.025);
                                     }`,
                                 children:[
                                     {
@@ -101,7 +95,6 @@ export default function sectors(){
                                             {
                                                 height:30%;
                                                 width:fit-content;
-                                                filter:invert(1);
                                             }`,
                                         src:n.src
                                     },
@@ -111,8 +104,7 @@ export default function sectors(){
                                             {
                                                 font-size:24px;
                                                 font-weight:500;
-                                                color:var(--colorWhite);
-                                                background:var(--colorBlack);
+                                                color:var(--colorBlack);
                                                 margin:2.5% 0px 10% 0px;
                                             }`,
                                         innerHTML:n.title
@@ -123,8 +115,7 @@ export default function sectors(){
                                             {
                                                 font-size:14px;
                                                 text-align:justify;
-                                                color:var(--colorWhite);
-                                                background:var(--colorBlack);
+                                                color:var(--colorBlack);
                                                 width:100%;
                                             }`,
                                         innerHTML:n.text

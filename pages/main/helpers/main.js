@@ -9,6 +9,9 @@ export default function helpers(){
                     flex-direction:column;
                     width:90%;
                     margin:5% 0px 0px 0px;
+                    padding:10px 15px;
+                    background:var(--colorWhite);
+                    border-radius:5px;
                     opacity:0;
                     transform:translateY(50%);
                     transition:all 0.5s;
@@ -39,7 +42,6 @@ export default function helpers(){
                             font-weight:500;
                             color:var(--colorBlack);
                             background:var(--colorWhite);
-                            padding:5px 10px;
                             margin:0px 0px 5px 0px;
                         }
                         :responsive{
@@ -77,10 +79,8 @@ export default function helpers(){
                                         margin:10px 0px;
                                         padding:10px 15px;
                                         box-shadow:0px 0px 2px 0px var(--colorWhite);
-                                        background-image:url("${h.src}");
-                                        background-size:contain;
-                                        background-repeat:no-repeat;
-                                        background-position:center;
+                                        background:var(--colorGreen) url("${h.src}") center / contain no-repeat;
+                                        box-shadow:0px 0px 1px 1px var(--colorGreen);
                                         cursor:pointer;
                                         overflow:hidden;
                                         transition:all 0.25s;
