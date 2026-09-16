@@ -79,8 +79,8 @@ export default function helpers(){
                                         margin:10px 0px;
                                         padding:10px 15px;
                                         box-shadow:0px 0px 2px 0px var(--colorWhite);
-                                        background:var(--colorGreen) url("${h.src}") center / contain no-repeat;
-                                        box-shadow:0px 0px 1px 1px var(--colorGreen);
+                                        background:var(--colorGray) url("${h.src}") center / contain no-repeat;
+                                        box-shadow:0px 0px 1px 1px var(--colorGray);
                                         cursor:pointer;
                                         overflow:hidden;
                                         transition:all 0.25s;

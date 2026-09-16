@@ -10,8 +10,8 @@ export default function events(){
                     width:100%;
                     margin:5% 0px 0px 0px;
                     padding:1% 5%;
-                    background:var(--colorGreen);
-                    box-shadow:0px 0px 2.5px 5px var(--colorGreen);
+                    background:var(--colorGray);
+                    box-shadow:0px 0px 2.5px 5px var(--colorGray);
                 }`,
             children:[
                 {
@@ -76,7 +76,7 @@ export default function events(){
                                             font-weight:500;
                                             width:fit-content;
                                             color:var(--colorBlack);
-                                            background:var(--colorGreen);
+                                            background:var(--colorGray);
                                             padding:5px 10px;
                                             border-radius:5px 0px 0px 0px;
                                         }`,
@@ -90,7 +90,7 @@ export default function events(){
                                             font-weight:500;
                                             color:var(--colorWhite);
                                             background:var(--colorBlack);
-                                            border-top:1px solid var(--colorGreen);
+                                            border-top:1px solid var(--colorGray);
                                             width:100%;
                                             padding:5px 10px 0px;
                                         }`,
@@ -178,8 +178,8 @@ export default function events(){
                                                             {
                                                                 font-size:15px;
                                                                 font-weight:500;
-                                                                color:var(--colorGreen);
-                                                                border-bottom:1px solid var(--colorGreen);
+                                                                color:var(--colorGray);
+                                                                border-bottom:1px solid var(--colorGray);
                                                                 width:100%;
                                                                 padding:5px 0px;
                                                                 text-align:right;

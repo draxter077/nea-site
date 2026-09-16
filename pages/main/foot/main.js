@@ -9,7 +9,7 @@ export default function foot(){
                     align-items:center;
                     width:100%;
                     height:fit-content;
-                    border-top:1px solid var(--colorGreen);
+                    border-top:1px solid var(--colorGray);
                     margin:5% 0px 0px 0px;
                     padding:2% 5% 1%;
                 }
@@ -121,7 +121,7 @@ export default function foot(){
                                         font-size:14px;
                                         font-weight:600;
                                         color:var(--colorWhite);
-                                        border-bottom:1px solid var(--colorGreen);
+                                        border-bottom:1px solid var(--colorGray);
                                         padding:0px 5px;
                                         cursor:pointer;
                                         transition:all 0.5s;

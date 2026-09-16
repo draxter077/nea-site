@@ -72,7 +72,7 @@ const resetCss = `
     :root{
     	--colorWhite:rgb(245,245,245);
     	--colorBlack:rgb(0,0,0);
-        --colorGreen:rgb(125,150,125);
+        --colorGray:rgb(125,125,125);
         --colorBluePh:rgb(56,182,255);
         --colorGreenWhatsApp:rgb(37,211,102);
     }

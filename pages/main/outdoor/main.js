@@ -23,7 +23,7 @@ export default function outdoor(){
                         {
                             font-size:43px;
                             font-weight:600;
-                            text-shadow:0px 0px 3px var(--colorGreen);
+                            text-shadow:0px 0px 3px var(--colorGray);
                             color:var(--colorWhite);
                         }`,
                     innerHTML:"Somos curiosidade, inovação<br>e experiência"
@@ -68,7 +68,7 @@ export default function outdoor(){
                                         padding:15px;
                                         border-radius:50%;
                                         cursor:pointer;
-                                        background:var(--colorGreen);
+                                        background:var(--colorGray);
                                         transition:all 0.25s;
                                     }
                                     :hover{

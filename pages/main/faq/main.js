@@ -60,8 +60,8 @@ export default function faq(){
                             font-size:24px;
                             color:white;
                             font-weight:600;
-                            border-right:1px solid var(--colorGreen);
-                            border-left:1px solid var(--colorGreen);
+                            border-right:1px solid var(--colorGray);
+                            border-left:1px solid var(--colorGray);
                             padding:5px 30px;
                         }`,
                     innerHTML:"Perguntas frequentes"
@@ -90,7 +90,7 @@ export default function faq(){
                                         display:flex;
                                         flex-direction:column;
                                         width:49%;
-                                        box-shadow:0px 0px 3px 0px var(--colorGreen);
+                                        box-shadow:0px 0px 3px 0px var(--colorGray);
                                         padding:10px 15px;
                                         border-radius:15px;
                                         margin:5px 0px;

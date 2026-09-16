@@ -38,7 +38,7 @@ export default function newsletter(){
                             font-size:31px;
                             font-weight:500;
                             color:var(--colorblack);
-                            background:var(--colorGreen);
+                            background:var(--colorGray);
                             margin:0px 0px 1% 0px;
                             padding:5px 10px;
                         }
@@ -77,7 +77,7 @@ export default function newsletter(){
                                         aspect-ratio:16/9;
                                         background:var(--colorBlack) url("https://img.magnific.com/fotos-gratis/jovem-bonito-vestindo-camiseta-casual-sobre-o-rosto-feliz-de-fundo-azul-sorrindo-com-os-bracos-cruzados-olhando-para-a-camera-pessoa-positiva_839833-12963.jpg?semt=ais_hybrid&w=740&q=80") center / contain no-repeat;
                                         border-radius:5px;
-                                        box-shadow:0px 0px 2px 1px var(--colorGreen);
+                                        box-shadow:0px 0px 2px 1px var(--colorGray);
                                         cursor:pointer;
                                         overflow:hidden;
                                         transition:all 0.25s;
@@ -110,7 +110,7 @@ export default function newsletter(){
                                                         font-weight:500;
                                                         width:fit-content;
                                                         color:var(--colorBlack);
-                                                        background:var(--colorGreen);
+                                                        background:var(--colorGray);
                                                         padding:5px 10px;
                                                         border-radius:5px 0px 0px 0px;
                                                     }`,
@@ -124,7 +124,7 @@ export default function newsletter(){
                                                         font-weight:500;
                                                         color:var(--colorWhite);
                                                         background:var(--colorBlack);
-                                                        border-top:1px solid var(--colorGreen);
+                                                        border-top:1px solid var(--colorGray);
                                                         width:100%;
                                                         padding:5px 10px 0px;
                                                     }`,

@@ -37,7 +37,7 @@ export default function sectors(){
                         {
                             font-size:31px;
                             font-weight:500;
-                            color:var(--colorGreen);
+                            color:var(--colorGray);
                             margin:0px 0px 5px 0px;
                         }
                         :responsive{
@@ -77,8 +77,8 @@ export default function sectors(){
                                         border-radius:5px;
                                         margin:10px 0px;
                                         padding:10px 15px;
-                                        box-shadow:0px 0px 2px 0px var(--colorGreen);
-                                        background:var(--colorGreen);
+                                        box-shadow:0px 0px 2px 0px var(--colorGray);
+                                        background:var(--colorGray);
                                         overflow:hidden;
                                     }
                                     :responsive{
